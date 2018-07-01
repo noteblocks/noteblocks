@@ -31,5 +31,12 @@ module Noteblocks
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    config.generators do |g|
+      g.orm :active_record # use active_record as default orm
+      g.test_framework :rspec, fixture: true
+      g.integration_tool :rspec
+      g.fixture_replacement :factory_bot
+      g.factory_bot dir: 'spec/factories'
+    end
   end
 end

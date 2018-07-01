@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_01_163146) do
+ActiveRecord::Schema.define(version: 2018_07_01_163440) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "blocks", force: :cascade do |t|
+    t.bigint "notebook_id"
+    t.string "name"
+    t.json "data"
+    t.string "schema_version"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["notebook_id"], name: "index_blocks_on_notebook_id"
+  end
 
   create_table "notebooks", force: :cascade do |t|
     t.string "name"
@@ -19,4 +32,5 @@ ActiveRecord::Schema.define(version: 2018_07_01_163146) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "blocks", "notebooks"
 end

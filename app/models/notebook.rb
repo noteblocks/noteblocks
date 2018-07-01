@@ -1,2 +1,3 @@
 class Notebook < ApplicationRecord
+
 end

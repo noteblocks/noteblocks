@@ -11,8 +11,8 @@ Notebook.create!([
 ])
 
 Block.create!([
-  {id: 1, notebook_id: 1, name: "Block 1", schema_version: 'v1', data: {}},
-  {id: 2, notebook_id: 1, name: "Block 2", schema_version: 'v1', data: {}},
-  {id: 3, notebook_id: 2, name: "Block 1", schema_version: 'v1', data: {}},
-  {id: 4, notebook_id: 2, name: "Block 2", schema_version: 'v1', data: {}}
+  { id: 1, notebook_id: 1, name: "Block 1", schema_version: 'v1', data: { block_type: 'text' } },
+  { id: 2, notebook_id: 1, name: "Block 2", schema_version: 'v1', data: { block_type: 'text' } },
+  { id: 3, notebook_id: 2, name: "Block 1", schema_version: 'v1', data: { block_type: 'text' } },
+  { id: 4, notebook_id: 2, name: "Block 2", schema_version: 'v1', data: { block_type: 'text' } }
 ])

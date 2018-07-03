@@ -1,5 +1,7 @@
 # Noteblocks
 
+[![Build Status](https://travis-ci.org/noteblocks/noteblocks.svg?branch=master)](https://travis-ci.org/noteblocks/noteblocks)
+
 ### Configuration
 - Ruby version `2.5.1` (we use [rvm](https://rvm.io/) to manage ruby)
 - We use [bundler](http://bundler.io/) to manage dependencies
@@ -28,8 +30,13 @@ We use [Rspec](http://rspec.info/) with [factory_bot](https://github.com/thought
 - run `bundle exec rspec <test-file/folder>` to run parts of suite
 - add `-fd` flag to run test with formatted output
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Other info
+- If you want to play around, console with `rails console` or `rails c`
+- add `byebug` to add breakpoint and debug, see [byebug cheat sheet](https://github.com/deivid-rodriguez/byebug/blob/master/GUIDE.md)
+- Start server with `rails server` or `rails s`
+- running `rails dbconsole` will drop you into psql/db prompt
+- run `rails routes` to see all possible routes to query(or see controller
+  specs to see what params they take).
+- run `rails db:migrate` to run migration
+- run `rails db:migrate:status` to see state to db and pending migrations
+- run `rails db:rollback` to undo last migration

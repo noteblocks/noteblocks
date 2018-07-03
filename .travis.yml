@@ -1,0 +1,23 @@
+# Travis.yml for the build bot for noteblocks
+language: ruby
+# Using .ruby-version so no need for an rvm key
+
+# Install is handled by bundler in the travis ruby buildpack
+
+# Need to initialize a test postgres db for testing out the project
+services:
+  - postgresql
+
+# Create nb_user with CREATEDB permissions
+before_script:
+  - psql -c "CREATE USER nb_user WITH PASSWORD 'pass';" -U postgres
+  - psql -c "ALTER USER nb_user CREATEDB;" -U postgres
+  - cp config/database.yml.example config/database.yml
+
+# Execute the bundle exec for db create, load and seed
+script:
+- bundle exec rails db:create db:schema:load db:seed
+
+after_success:
+- bundle exec rspec
+

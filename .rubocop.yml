@@ -29,11 +29,21 @@ Style/Documentation:
   Description: 'Document classes and non-namespace modules.'
   Enabled: false
 
+Style/BlockComments:
+  Enabled: false
+
+StringLiterals:
+  Enabled: false
+  Exclude:
+    - 'db/'
+    - 'config/*'
+
 Style/StringLiterals:
   Description: 'Checks if uses of quotes match the configured preference.'
   Enabled: false
   Exclude:
-    - /lib/generators/**
+    - 'db/'
+    - 'config/*'
 
 Naming/FileName:
   Exclude:
@@ -54,6 +64,7 @@ Style/FrozenStringLiteralComment:
   Severity: error
   Exclude:
     - 'db/*'
+    - 'config/**/*.rb'
 
 # There are a number of situations where this makes code less readable or
 # disrupts the visual flow of code.
@@ -89,6 +100,9 @@ Naming/PredicateName:
 Layout/SpaceBeforeFirstArg:
   Exclude:
     - '*.gemspec'
+
+Layout/TrailingWhitespace:
+  Enabled: false
 
 Style/RedundantReturn:
   Description: "Don't use return where it's not required."
@@ -176,8 +190,10 @@ Metrics/BlockLength:
     - 'spec/**/*'
 
 Metrics/LineLength:
+  Max: 80
   Exclude:
-    - 'config/routes.rb'
+    - 'db/*'
+    - 'config/**/*.rb'
 
 Metrics/PerceivedComplexity:
   Description: 'A complexity metric geared towards measuring complexity for a human reader.'

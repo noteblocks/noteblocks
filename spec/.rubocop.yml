@@ -1,0 +1,15 @@
+inherit_from:
+  - ../.rubocop.yml
+
+Metrics/LineLength:
+  Max: 120
+
+StringLiterals:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Exclude:
+    - "../spec/support/*"

@@ -7,6 +7,8 @@
 - We use [bundler](http://bundler.io/) to manage dependencies
 - install bundler with `gem install bundler`
 - now run `bundle install` to install dependencies
+- install overcommit hooks by running `overcommit --install` & `overcommit --sign pre-commit`
+    
 
 ### Database creation
 - Install [postgreSQL](http://postgresql.com/) by following standard install steps

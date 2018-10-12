@@ -5,8 +5,6 @@ ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
-# Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
 # Use postgres as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -21,18 +19,11 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-# Lint Ruby code
-gem 'rubocop', require: false
-# for commit hooks
-gem "overcommit", require: false
-
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS),
+# making cross-origin AJAX possible
 # gem 'rack-cors'
 
 gem 'awesome_print'
@@ -40,6 +31,12 @@ gem 'awesome_print'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # for security scanning https://brakemanscanner.org/docs/
+  gem "brakeman"
+  # Lint Ruby code
+  gem 'rubocop', require: false
+  # for commit hooks
+  gem "overcommit", '>= 0.46.0', require: false
 end
 
 group :development do

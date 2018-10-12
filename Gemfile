@@ -37,6 +37,8 @@ group :development, :test do
   gem 'rubocop', require: false
   # for commit hooks
   gem "overcommit", '>= 0.46.0', require: false
+  # for coverage report
+  gem 'coveralls', require: false
 end
 
 group :development do

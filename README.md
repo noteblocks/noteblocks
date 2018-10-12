@@ -1,6 +1,7 @@
 # Noteblocks
 
 [![Build Status](https://travis-ci.org/noteblocks/noteblocks.svg?branch=master)](https://travis-ci.org/noteblocks/noteblocks)
+[![Coverage Status](https://coveralls.io/repos/github/noteblocks/noteblocks/badge.svg)](https://coveralls.io/github/noteblocks/noteblocks)
 
 ### Configuration
 - Ruby version `2.5.1` (we use [rvm](https://rvm.io/) to manage ruby)

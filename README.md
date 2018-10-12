@@ -7,7 +7,13 @@
 - We use [bundler](http://bundler.io/) to manage dependencies
 - install bundler with `gem install bundler`
 - now run `bundle install` to install dependencies
-- install overcommit hooks by running `overcommit --install` & `overcommit --sign pre-commit`
+- install overcommit hooks by running 
+ ```sh
+    overcommit --install
+    overcommit --sign
+    overcommit --sign pre-commit
+    overcommit --sign pre-push
+ ```
     
 
 ### Database creation
@@ -15,10 +21,10 @@
 
 - follow these instructions to properly add a user,
 replace `nb_user` with desired pg username and `pass` with desired password for your user
-- $ `sudo -u postgres createuser nb_user`
-- $ `sudo -u postgres psql`
-- $ postgres=# `ALTER USER nb_user CREATEDB;`
-- $ postgres=# `ALTER USER nb_user WITH PASSWORD 'pass';`
+- `sudo -u postgres createuser nb_user`
+- `sudo -u postgres psql`
+- postgres=# `ALTER USER nb_user CREATEDB;`
+- postgres=# `ALTER USER nb_user WITH PASSWORD 'pass';`
 - Create `database.yml` from `database.yml.example` file and add your username and password
 
 ### Database initialization

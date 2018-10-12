@@ -17,8 +17,14 @@
 
 plugin_directory: 'custom-git-hooks'
 
+PrePush:
+  Brakeman:
+    enabled: true
+
 PreCommit:
   AuthorName:
+    enabled: true
+  AuthorEmail:
     enabled: true
   MergeConflicts:
     enabled: true

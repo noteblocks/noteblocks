@@ -30,3 +30,6 @@
 
 # ignore config files
 /config/database.yml
+
+# ignore coverage folder and files
+/coverage

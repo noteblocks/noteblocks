@@ -3,9 +3,8 @@ require 'rails_helper'
 RSpec.describe NotebooksController, type: :request do
   # initialize test data
   let!(:notebooks) { create_list(:notebook, 10) }
-  let(:notebook_id) { notebooks.first.id }
+  let!(:notebook_id) { notebooks.first.id }
 
-  # Test suite for GET /notebooks
   describe 'GET /notebooks' do
     before { get '/notebooks' }
 
@@ -19,35 +18,6 @@ RSpec.describe NotebooksController, type: :request do
     end
   end
 
-  # Test suite for GET /notebooks/:id
-  describe 'GET /notebooks/:id' do
-    before { get "/notebooks/#{notebook_id}" }
-
-    context 'when the record exists' do
-      it 'returns the notebook' do
-        expect(response.parsed_body).not_to be_empty
-        expect(response.parsed_body['id']).to eq(notebook_id)
-      end
-
-      it 'returns status code 200' do
-        expect(response).to have_http_status(200)
-      end
-    end
-
-    context 'when the record does not exist' do
-      let(:notebook_id) { 100 }
-
-      it 'returns status code 404' do
-        expect(response).to have_http_status(404)
-      end
-
-      it 'returns a not found message' do
-        expect(response.body).to match(/Couldn't find Notebook/)
-      end
-    end
-  end
-
-  # Test suite for POST /notebooks
   describe 'POST /notebooks' do
     # valid payload
     let(:valid_attributes) { { name: 'Test Notebook', desc: 'Test Desc' } }
@@ -79,7 +49,33 @@ RSpec.describe NotebooksController, type: :request do
     end
   end
 
-  # Test suite for PUT /notebooks/:id
+  describe 'GET /notebooks/:id' do
+    before { get "/notebooks/#{notebook_id}" }
+
+    context 'when the record exists' do
+      it 'returns the notebook' do
+        expect(response.parsed_body).not_to be_empty
+        expect(response.parsed_body['id']).to eq(notebook_id)
+      end
+
+      it 'returns status code 200' do
+        expect(response).to have_http_status(200)
+      end
+    end
+
+    context 'when the record does not exist' do
+      let(:notebook_id) { 100 }
+
+      it 'returns status code 404' do
+        expect(response).to have_http_status(404)
+      end
+
+      it 'returns a not found message' do
+        expect(response.body).to match(/Couldn't find Notebook/)
+      end
+    end
+  end
+
   describe 'PUT /notebooks/:id' do
     let(:valid_attributes) { { title: 'Shopping' } }
 
@@ -96,7 +92,6 @@ RSpec.describe NotebooksController, type: :request do
     end
   end
 
-  # Test suite for DELETE /notebooks/:id
   describe 'DELETE /notebooks/:id' do
     before { delete "/notebooks/#{notebook_id}" }
 

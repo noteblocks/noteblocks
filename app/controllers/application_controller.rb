@@ -2,6 +2,6 @@
 
 class ApplicationController < ActionController::API
   include ActionController::ImplicitRender
-  include Response
+  include ResponseHelper
   include ExceptionHandler
 end

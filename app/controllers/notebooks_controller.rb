@@ -5,13 +5,12 @@ class NotebooksController < ApplicationController
 
   # GET /notebooks
   def index
-    @notebooks = Notebook.all
-    json_response(@notebooks)
+    json_response(Notebook.all)
   end
 
   # POST /notebooks
   def create
-    @notebook = Notebook.create!(notebook_params)
+    @notebook = Notebook.create!(permitted_params)
     json_response(@notebook, :created)
   end
 
@@ -22,7 +21,7 @@ class NotebooksController < ApplicationController
 
   # PUT /notebooks/:id
   def update
-    @notebook.update(notebook_params)
+    @notebook.update(permitted_params)
     head :no_content
   end
 
@@ -34,7 +33,7 @@ class NotebooksController < ApplicationController
 
   private
 
-  def notebook_params
+  def permitted_params
     # whitelist params
     params.permit(:name, :desc)
   end

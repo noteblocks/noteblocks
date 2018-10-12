@@ -1,5 +1,4 @@
 # Docs: https://rubocop.readthedocs.io/en/latest/cops/
-
 AllCops:
   Include:
     - Rakefile
@@ -17,11 +16,10 @@ AllCops:
     - spec/helpers/*
   TargetRubyVersion: 2.5
 
-
 Rails:
   Enabled: true
 
-#################### Style ################################
+#################### Style ##############################
 Lint/Debugger:
   Severity: fatal
 
@@ -152,8 +150,7 @@ Style/BracesAroundHashParameters:
   Description: 'Autocorrect fails, causing errors...Enforce braces style around hash parameters.'
   Enabled: false
 
-#################### Metrics ################################
-
+#################### Metrics #############################
 Metrics/AbcSize:
   Description: 'A calculated magnitude based on number of assignments, branches, and conditions.'
   Enabled: false
@@ -199,9 +196,7 @@ Metrics/PerceivedComplexity:
   Description: 'A complexity metric geared towards measuring complexity for a human reader.'
   Enabled: true
 
-
 #################### Lint ################################
-
 Lint/AmbiguousRegexpLiteral:
   Enabled: false
 
@@ -221,8 +216,7 @@ Lint/PercentStringArray:
   Description: "Checks for unwanted commas and quotes in %w/%W literals."
   Enabled: true
 
-#################### Security ################################
-
+#################### Security ############################
 Security/Open:
   Description: "Disallow use of Kernel#open, See: https://github.com/bbatsov/rubocop/blob/master/manual/cops_security.md#securityopen"
   Enabled: true

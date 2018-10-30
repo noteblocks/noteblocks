@@ -8,6 +8,8 @@ cache: bundler
 # Need to initialize a test postgres db
 services:
   - postgresql
+addons:
+  postgresql: "9.6"
 
 # Prepare test env
 before_script:

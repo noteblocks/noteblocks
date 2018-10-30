@@ -18,7 +18,7 @@
     
 
 ### Database creation
-- Install [postgreSQL](http://postgresql.com/) by following standard install steps
+- Install [PostgreSQL](http://postgresql.com/) (version >= 9.4) by following standard install steps
 
 - follow these instructions to properly add a user,
 replace `nb_user` with desired pg username and `pass` with desired password for your user

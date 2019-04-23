@@ -49,7 +49,7 @@ GEM
       msgpack (~> 1.0)
     brakeman (4.5.0)
     builder (3.2.3)
-    byebug (10.0.2)
+    byebug (11.0.1)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     concurrent-ruby (1.1.5)

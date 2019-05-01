@@ -45,7 +45,7 @@ GEM
     arel (9.0.0)
     ast (2.4.0)
     awesome_print (1.8.0)
-    bootsnap (1.4.3)
+    bootsnap (1.4.4)
       msgpack (~> 1.0)
     brakeman (4.5.0)
     builder (3.2.3)
